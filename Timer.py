@@ -1,5 +1,6 @@
 from threading import Timer
 import time
+import pyglet
 
 class Timer:
 
@@ -7,7 +8,9 @@ class Timer:
         print("Welcome to the Choco timer. Please type 'feeddachocos' to begin")
 
     def ding(self):
-        print("ding")
+        music = pyglet.resource.media('chocoboThemeClip.mp3')
+        music.play()
+        pyglet.app.run()
 
     def startTimer(self, timeLength):
         t = Timer(timeLength, self.ding)
