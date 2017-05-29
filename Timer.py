@@ -1,18 +1,20 @@
-from threading import Timer
+from threading import Timer as PyTimer
 import time
 import pyglet
 
-class Timer:
+
+class Timer(object):
 
     def welcome(self):
-        print("Welcome to the Choco timer. Please type 'feeddachocos' to begin")
+        print("Welcome to the Choco timer. Please type 'fed' to begin")
 
     def ding(self):
-        music = pyglet.resource.media('chocoboThemeClip.mp3')
+        print("ding")
+        music = pyglet.resource.media('chocoThemeClip.wav')
         music.play()
         pyglet.app.run()
 
     def startTimer(self, timeLength):
-        t = Timer(timeLength, self.ding)
+        t = PyTimer(timeLength, self.ding)
         t.start()
 
