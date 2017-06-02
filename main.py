@@ -6,7 +6,7 @@ if __name__ == "__main__":
     while True:
         usrInp = input("> ")
         if usrInp == "fed":
-            t.startTimer(20)
+            t.startTimer(3600)
             print("Time started")
         elif usrInp == "status":
             t.printList()
